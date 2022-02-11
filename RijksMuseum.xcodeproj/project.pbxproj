@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		52FD40B327B67B54000EA462 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD40B227B67B54000EA462 /* ViewController.swift */; };
 		52FD40B827B67B55000EA462 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52FD40B727B67B55000EA462 /* Assets.xcassets */; };
 		52FD40BB27B67B55000EA462 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52FD40B927B67B55000EA462 /* LaunchScreen.storyboard */; };
+		52FD40DA27B6813C000EA462 /* AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD40D927B6813C000EA462 /* AppContext.swift */; };
 		BC20C124E1140C41CA86D3B2 /* Pods_RijksMuseum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1592C2E6528EC4E314EFA9C4 /* Pods_RijksMuseum.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,8 @@
 		52FD40B727B67B55000EA462 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52FD40BA27B67B55000EA462 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52FD40BC27B67B55000EA462 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52FD40D927B6813C000EA462 /* AppContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContext.swift; sourceTree = "<group>"; };
+		52FD40DD27B68167000EA462 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,14 +64,40 @@
 		52FD40AD27B67B54000EA462 /* RijksMuseum */ = {
 			isa = PBXGroup;
 			children = (
-				52FD40AE27B67B54000EA462 /* AppDelegate.swift */,
-				52FD40B027B67B54000EA462 /* SceneDelegate.swift */,
-				52FD40B227B67B54000EA462 /* ViewController.swift */,
-				52FD40B727B67B55000EA462 /* Assets.xcassets */,
-				52FD40B927B67B55000EA462 /* LaunchScreen.storyboard */,
+				52FD40D827B6810F000EA462 /* Helper */,
 				52FD40BC27B67B55000EA462 /* Info.plist */,
+				52FD40D327B67FD4000EA462 /* Supporting Files */,
+				52FD40D027B67FC7000EA462 /* Application Layer */,
+				52FD40B227B67B54000EA462 /* ViewController.swift */,
 			);
 			path = RijksMuseum;
+			sourceTree = "<group>";
+		};
+		52FD40D027B67FC7000EA462 /* Application Layer */ = {
+			isa = PBXGroup;
+			children = (
+				52FD40AE27B67B54000EA462 /* AppDelegate.swift */,
+				52FD40B027B67B54000EA462 /* SceneDelegate.swift */,
+			);
+			name = "Application Layer";
+			sourceTree = "<group>";
+		};
+		52FD40D327B67FD4000EA462 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				52FD40B727B67B55000EA462 /* Assets.xcassets */,
+				52FD40B927B67B55000EA462 /* LaunchScreen.storyboard */,
+				52FD40DD27B68167000EA462 /* Config.xcconfig */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		52FD40D827B6810F000EA462 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				52FD40D927B6813C000EA462 /* AppContext.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		8108F67D1C332857C7A3FA9B /* Frameworks */ = {
@@ -85,7 +114,6 @@
 				502BB8610CA4D822F3A82AF8 /* Pods-RijksMuseum.debug.xcconfig */,
 				12DA69EC6A8A93973902E2CD /* Pods-RijksMuseum.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -203,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52FD40B327B67B54000EA462 /* ViewController.swift in Sources */,
+				52FD40DA27B6813C000EA462 /* AppContext.swift in Sources */,
 				52FD40AF27B67B54000EA462 /* AppDelegate.swift in Sources */,
 				52FD40B127B67B54000EA462 /* SceneDelegate.swift in Sources */,
 			);
@@ -224,6 +253,7 @@
 /* Begin XCBuildConfiguration section */
 		52FD40BD27B67B55000EA462 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52FD40DD27B68167000EA462 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -285,6 +315,7 @@
 		};
 		52FD40BE27B67B55000EA462 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52FD40DD27B68167000EA462 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;

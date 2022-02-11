@@ -1,0 +1,11 @@
+//
+//  Config.xcconfig
+//  RijksMuseum
+//
+//  Created by M Hanif Sugiyanto on 11/02/22.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+API_KEY = pVZgdWmc
