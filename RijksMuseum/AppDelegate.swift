@@ -6,15 +6,26 @@
 //
 
 import UIKit
+import RxSwift
+import AsyncDisplayKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    private let disposeBag: DisposeBag = DisposeBag()
+    private var appCoordinator: AppCoordinator!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = ViewController()
+        if let window = window {
+            let navigationController = ASNavigationController()
+            window.rootViewController = navigationController
+            appCoordinator = AppCoordinator(window: window, navigationController: navigationController)
+            appCoordinator.start()
+                .subscribe()
+                .disposed(by: disposeBag)
+        }
         window?.makeKeyAndVisible()
         return true
     }

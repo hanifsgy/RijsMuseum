@@ -8,7 +8,7 @@
 import Foundation
 
 struct Collection: Codable {
-    var artObjects: ArtObjects
+    var artObjects: [ArtObjects]
 }
 
 struct ArtObjects: Codable {

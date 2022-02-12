@@ -18,6 +18,17 @@
 		52FD40E827B682CF000EA462 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD40E727B682CF000EA462 /* NetworkError.swift */; };
 		52FD40ED27B683C0000EA462 /* RijksAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD40EC27B683C0000EA462 /* RijksAPI.swift */; };
 		52FD40F227B684BC000EA462 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD40F127B684BC000EA462 /* Collection.swift */; };
+		52FD413427B7CCC9000EA462 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD413327B7CCC9000EA462 /* BaseCoordinator.swift */; };
+		52FD413827B7CCE7000EA462 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD413727B7CCE7000EA462 /* AppCoordinator.swift */; };
+		52FD413B27B7CD25000EA462 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD413A27B7CD25000EA462 /* HomeController.swift */; };
+		52FD413E27B7CDD0000EA462 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD413D27B7CDD0000EA462 /* HomeViewModel.swift */; };
+		52FD414127B7CDF3000EA462 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD414027B7CDF3000EA462 /* ViewModelType.swift */; };
+		52FD414427B7CE83000EA462 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD414327B7CE83000EA462 /* ActivityIndicator.swift */; };
+		52FD414727B7CE95000EA462 /* ErrorTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD414627B7CE95000EA462 /* ErrorTracker.swift */; };
+		52FD414A27B7CF4D000EA462 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD414927B7CF4D000EA462 /* Observable.swift */; };
+		52FD415027B7D28B000EA462 /* HomeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD414F27B7D28B000EA462 /* HomeNode.swift */; };
+		52FD415727B7D3CE000EA462 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD415627B7D3CE000EA462 /* HomeCoordinator.swift */; };
+		52FD416227B7EE71000EA462 /* MosaicCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD416127B7EE71000EA462 /* MosaicCollectionViewLayout.swift */; };
 		BC20C124E1140C41CA86D3B2 /* Pods_RijksMuseum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1592C2E6528EC4E314EFA9C4 /* Pods_RijksMuseum.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +50,17 @@
 		52FD40E727B682CF000EA462 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		52FD40EC27B683C0000EA462 /* RijksAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksAPI.swift; sourceTree = "<group>"; };
 		52FD40F127B684BC000EA462 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
+		52FD413327B7CCC9000EA462 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		52FD413727B7CCE7000EA462 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		52FD413A27B7CD25000EA462 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		52FD413D27B7CDD0000EA462 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		52FD414027B7CDF3000EA462 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		52FD414327B7CE83000EA462 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		52FD414627B7CE95000EA462 /* ErrorTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTracker.swift; sourceTree = "<group>"; };
+		52FD414927B7CF4D000EA462 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		52FD414F27B7D28B000EA462 /* HomeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNode.swift; sourceTree = "<group>"; };
+		52FD415627B7D3CE000EA462 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		52FD416127B7EE71000EA462 /* MosaicCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MosaicCollectionViewLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +96,8 @@
 		52FD40AD27B67B54000EA462 /* RijksMuseum */ = {
 			isa = PBXGroup;
 			children = (
+				52FD413227B7CC72000EA462 /* Coordinator */,
+				52FD413127B7CC55000EA462 /* Scene */,
 				52FD40F027B684AB000EA462 /* Models */,
 				52FD40E027B68227000EA462 /* Networking */,
 				52FD40D827B6810F000EA462 /* Helper */,
@@ -107,7 +131,12 @@
 		52FD40D827B6810F000EA462 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				52FD416127B7EE71000EA462 /* MosaicCollectionViewLayout.swift */,
 				52FD40D927B6813C000EA462 /* AppContext.swift */,
+				52FD414027B7CDF3000EA462 /* ViewModelType.swift */,
+				52FD414327B7CE83000EA462 /* ActivityIndicator.swift */,
+				52FD414627B7CE95000EA462 /* ErrorTracker.swift */,
+				52FD414927B7CF4D000EA462 /* Observable.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -137,6 +166,34 @@
 				52FD40F127B684BC000EA462 /* Collection.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		52FD413127B7CC55000EA462 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				52FD416A27B7F9E7000EA462 /* Home */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		52FD413227B7CC72000EA462 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				52FD413327B7CCC9000EA462 /* BaseCoordinator.swift */,
+				52FD413727B7CCE7000EA462 /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		52FD416A27B7F9E7000EA462 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				52FD413A27B7CD25000EA462 /* HomeController.swift */,
+				52FD413D27B7CDD0000EA462 /* HomeViewModel.swift */,
+				52FD414F27B7D28B000EA462 /* HomeNode.swift */,
+				52FD415627B7D3CE000EA462 /* HomeCoordinator.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		8108F67D1C332857C7A3FA9B /* Frameworks */ = {
@@ -269,13 +326,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52FD416227B7EE71000EA462 /* MosaicCollectionViewLayout.swift in Sources */,
+				52FD413827B7CCE7000EA462 /* AppCoordinator.swift in Sources */,
+				52FD414427B7CE83000EA462 /* ActivityIndicator.swift in Sources */,
 				52FD40F227B684BC000EA462 /* Collection.swift in Sources */,
+				52FD414727B7CE95000EA462 /* ErrorTracker.swift in Sources */,
 				52FD40B327B67B54000EA462 /* ViewController.swift in Sources */,
 				52FD40E827B682CF000EA462 /* NetworkError.swift in Sources */,
 				52FD40DA27B6813C000EA462 /* AppContext.swift in Sources */,
 				52FD40E227B68255000EA462 /* NetworkManager.swift in Sources */,
+				52FD414127B7CDF3000EA462 /* ViewModelType.swift in Sources */,
+				52FD415027B7D28B000EA462 /* HomeNode.swift in Sources */,
+				52FD413427B7CCC9000EA462 /* BaseCoordinator.swift in Sources */,
 				52FD40E527B6827F000EA462 /* ErrorResponse.swift in Sources */,
+				52FD413E27B7CDD0000EA462 /* HomeViewModel.swift in Sources */,
+				52FD414A27B7CF4D000EA462 /* Observable.swift in Sources */,
+				52FD413B27B7CD25000EA462 /* HomeController.swift in Sources */,
 				52FD40AF27B67B54000EA462 /* AppDelegate.swift in Sources */,
+				52FD415727B7D3CE000EA462 /* HomeCoordinator.swift in Sources */,
 				52FD40ED27B683C0000EA462 /* RijksAPI.swift in Sources */,
 				52FD40B127B67B54000EA462 /* SceneDelegate.swift in Sources */,
 			);

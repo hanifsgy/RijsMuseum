@@ -6,15 +6,26 @@
 //
 
 import UIKit
+import RxSwift
+import AsyncDisplayKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    private let disposeBag: DisposeBag = DisposeBag()
+    private var appCoordinator: AppCoordinator!
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = ViewController()
+        if let window = window {
+            let navigationController = ASNavigationController()
+            window.rootViewController = navigationController
+            appCoordinator = AppCoordinator(window: window, navigationController: navigationController)
+            appCoordinator.start()
+                .subscribe()
+                .disposed(by: disposeBag)
+        }
         window?.makeKeyAndVisible()
     }
 
