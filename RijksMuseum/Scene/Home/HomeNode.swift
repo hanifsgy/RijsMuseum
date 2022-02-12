@@ -12,10 +12,6 @@ import RxCocoa
 
 final class HomeNode: ASCellNode {
     
-    struct Attributes {
-        static let placeholderColor: UIColor = UIColor.gray.withAlphaComponent(0.8)
-    }
-    
     lazy var postNode: ASNetworkImageNode = {
         let node = ASNetworkImageNode()
         node.style.preferredSize = CGSize(width: 320, height: 320)
