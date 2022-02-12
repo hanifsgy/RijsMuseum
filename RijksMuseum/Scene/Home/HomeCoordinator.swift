@@ -8,6 +8,10 @@
 import RxSwift
 import AsyncDisplayKit
 
+protocol HomeNavigator: AnyObject {
+    func launchDetail(object: ArtObjects) -> Observable<Void>
+}
+
 final class HomeCoordinator: BaseCoordinator<Void> {
     private let navigationController: ASNavigationController
     
@@ -16,9 +20,18 @@ final class HomeCoordinator: BaseCoordinator<Void> {
     }
     
     override func start() -> Observable<Void> {
-        let homeViewModel = HomeViewModel()
+        let homeViewModel = HomeViewModel(navigator: self)
         let homeController = HomeController(viewModel: homeViewModel)
         navigationController.pushViewController(homeController, animated: true)
         return Observable.empty()
     }
+}
+
+extension HomeCoordinator: HomeNavigator {
+    func launchDetail(object: ArtObjects) -> Observable<Void> {
+        print("NAVIGATIONS DETAIL \(object.id) image == \(object.headerImage.url)")
+        return Observable.just(())
+    }
+    
+    
 }

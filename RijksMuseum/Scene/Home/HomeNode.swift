@@ -18,12 +18,11 @@ final class HomeNode: ASCellNode {
     
     lazy var postNode: ASNetworkImageNode = {
         let node = ASNetworkImageNode()
-        node.style.preferredSize = CGSize(width: UIScreen.main.bounds.width, height: 320)
+        node.style.preferredSize = CGSize(width: 320, height: 320)
         node.clipsToBounds = true
         node.placeholderColor = Attributes.placeholderColor
         node.placeholderEnabled = true
         node.placeholderFadeDuration = 0.3
-        node.shouldCacheImage = true
         node.contentMode = .scaleAspectFill
         node.shouldRenderProgressImages = true
         return node

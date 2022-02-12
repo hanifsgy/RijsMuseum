@@ -171,6 +171,8 @@
 		52FD413127B7CC55000EA462 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				52FD417A27B82109000EA462 /* HomeDetail */,
+				52FD417927B820E2000EA462 /* Login */,
 				52FD416A27B7F9E7000EA462 /* Home */,
 			);
 			path = Scene;
@@ -194,6 +196,20 @@
 				52FD415627B7D3CE000EA462 /* HomeCoordinator.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		52FD417927B820E2000EA462 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		52FD417A27B82109000EA462 /* HomeDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomeDetail;
 			sourceTree = "<group>";
 		};
 		8108F67D1C332857C7A3FA9B /* Frameworks */ = {

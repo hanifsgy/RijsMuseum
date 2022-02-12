@@ -15,26 +15,32 @@ final class HomeViewModel: ViewModelType {
     
     struct Input {
         let refreshI: AnyObserver<String>
-        let insertNewCollection: AnyObserver<Void>
+        let insertNewCollectionI: AnyObserver<Void>
+        let didSelectItemI: AnyObserver<IndexPath>
     }
     
     struct Output {
         let itemsO: BehaviorRelay<[ArtObjects]>
         let refreshO: Driver<Void>
         let newItemsO: Driver<Void>
+        let itemSelectedO: Driver<Void>
     }
     
     private let refreshSubject = PublishSubject<String>()
     private let insertNewCollectionSubject = PublishSubject<Void>()
+    private let itemSelectedSubject = PublishSubject<IndexPath>()
     private let items = BehaviorRelay<[ArtObjects]>(value: [])
     private let activityIndicator = ActivityIndicator()
     private let errorTracker = ErrorTracker()
     private let totalPages = 1000
     private var currentPage = 1
+    private let navigator: HomeNavigator
     
-    init() {
+    init(navigator: HomeNavigator) {
+        self.navigator = navigator
         input = Input(refreshI: refreshSubject.asObserver(),
-                      insertNewCollection: insertNewCollectionSubject.asObserver())
+                      insertNewCollectionI: insertNewCollectionSubject.asObserver(),
+                      didSelectItemI: itemSelectedSubject.asObserver())
         
         // fetch data
         let canFetchData = insertNewCollectionSubject
@@ -55,10 +61,10 @@ final class HomeViewModel: ViewModelType {
         let items = refreshSubject
             .flatMapLatest { [weak self] (_) -> Observable<[ArtObjects]> in
                 guard let wSelf = self else { return Observable.empty() }
+                print("current page == \(wSelf.currentPage)")
                 return NetworkManager.instance.requestObject(RijksAPI.collection(p: wSelf.currentPage, ps: 10), c: Collection.self)
                     .map({ $0.artObjects })
                     .do(onSuccess: { (collection) in
-                        print("current page == \(wSelf.currentPage)")
                         wSelf.currentPage += 1
                         let itemsCollection = wSelf.items.value + collection
                         wSelf.items.accept(itemsCollection)
@@ -71,18 +77,26 @@ final class HomeViewModel: ViewModelType {
             }
             .mapToVoid()
             .asDriverOnErrorJustComplete()
+        
+        // Select Item
+        let itemSelected = itemSelectedSubject
+            .flatMapLatest { [weak self] (indexPath) -> Observable<Void> in
+                guard let wSelf = self else { return Observable.empty() }
+                let object = wSelf.items.value[indexPath.item]
+                return navigator.launchDetail(object: object)
+            }
+            .mapToVoid()
+            .asDriverOnErrorJustComplete()
             
         output = Output(itemsO: self.items,
                         refreshO: items,
-                        newItemsO: canFetchData)
+                        newItemsO: canFetchData,
+                        itemSelectedO: itemSelected)
     }
 }
 
 extension BehaviorRelay where Element: RangeReplaceableCollection {
-
-    func add(element: Element.Element) {
-        var array = self.value
-        array.append(element)
-        self.accept(array)
+    func acceptAppending(_ element: Element.Element) {
+        accept(value + [element])
     }
 }

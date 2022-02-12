@@ -11,7 +11,7 @@ struct Collection: Codable {
     var artObjects: [ArtObjects]
 }
 
-struct ArtObjects: Codable {
+struct ArtObjects: Codable, Equatable {
     var id: String
     var objectNumber: String
     var title: String
@@ -19,6 +19,11 @@ struct ArtObjects: Codable {
     var longTitle: String
     var webImage: WebImage
     var headerImage: HeaderImage
+    
+    static func == (lhs: ArtObjects, rhs: ArtObjects) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
 }
 
 struct WebImage: Codable {

@@ -55,7 +55,8 @@ extension RijksAPI: TargetType {
             return [
                 "p": page,
                 "ps": perPage,
-                "key": AppContext.instance.infoForKey("API_KEY")
+                "key": AppContext.instance.infoForKey("API_KEY"),
+                "imgonly": true
             ]
         }
     }
