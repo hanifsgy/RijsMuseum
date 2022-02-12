@@ -58,6 +58,15 @@ final class HomeController: ASDKViewController<ASCollectionNode> {
             })
             .drive()
             .disposed(by: disposeBag)
+        viewModel.output.newItemsO
+            .drive()
+            .disposed(by: disposeBag)
+    }
+    
+    // MARK: - Fetch New Batch
+    private func fetchNewBatchWithContext(_ context: ASBatchContext?) {
+        viewModel.input.insertNewCollection.onNext(())
+        context?.completeBatchFetching(true)
     }
 }
 
@@ -67,6 +76,7 @@ extension HomeController: ASCollectionDelegate {
     }
     func collectionNode(_ collectionNode: ASCollectionNode, willBeginBatchFetchWith context: ASBatchContext) {
         self.context = context
+        fetchNewBatchWithContext(context)
     }
     func collectionNode(_ collectionNode: ASCollectionNode, nodeForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> ASCellNode {
       return ASCellNode()

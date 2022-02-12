@@ -25,6 +25,7 @@ final class HomeNode: ASCellNode {
         node.placeholderFadeDuration = 0.3
         node.shouldCacheImage = true
         node.contentMode = .scaleAspectFill
+        node.shouldRenderProgressImages = true
         return node
     }()
     
@@ -46,10 +47,10 @@ extension HomeNode {
                                              children: [postNode])
         contentStack.style.flexGrow = 1.0
         contentStack.style.flexShrink = 1.0
-        return ASInsetLayoutSpec(insets: UIEdgeInsets(top: 10.0,
-                                                      left: 10.0,
-                                                      bottom: 10.0,
-                                                      right: 10.0),
+        return ASInsetLayoutSpec(insets: UIEdgeInsets(top: 4.0,
+                                                      left: 4.0,
+                                                      bottom: 4.0,
+                                                      right: 4.0),
                                  child: contentStack)
     }
 }
