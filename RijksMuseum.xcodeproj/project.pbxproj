@@ -34,6 +34,9 @@
 		52FD419127B827F6000EA462 /* HomeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD419027B827F6000EA462 /* HomeDetailViewModel.swift */; };
 		52FD419527B82931000EA462 /* Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD419427B82931000EA462 /* Attributes.swift */; };
 		52FD41CD27B94DA4000EA462 /* HomeDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD41CC27B94DA4000EA462 /* HomeDetailCoordinator.swift */; };
+		52FD41E227B95663000EA462 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD41E127B95663000EA462 /* MenuController.swift */; };
+		52FD41F327B95A10000EA462 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD41F127B95A10000EA462 /* LoginViewController.swift */; };
+		52FD41F427B95A10000EA462 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52FD41F227B95A10000EA462 /* LoginViewController.xib */; };
 		BC20C124E1140C41CA86D3B2 /* Pods_RijksMuseum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1592C2E6528EC4E314EFA9C4 /* Pods_RijksMuseum.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +86,9 @@
 		52FD419027B827F6000EA462 /* HomeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewModel.swift; sourceTree = "<group>"; };
 		52FD419427B82931000EA462 /* Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attributes.swift; sourceTree = "<group>"; };
 		52FD41CC27B94DA4000EA462 /* HomeDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailCoordinator.swift; sourceTree = "<group>"; };
+		52FD41E127B95663000EA462 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		52FD41F127B95A10000EA462 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		52FD41F227B95A10000EA462 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +209,7 @@
 		52FD413127B7CC55000EA462 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				52FD41E027B95653000EA462 /* Menu */,
 				52FD417A27B82109000EA462 /* HomeDetail */,
 				52FD417927B820E2000EA462 /* Login */,
 				52FD416A27B7F9E7000EA462 /* Home */,
@@ -233,6 +240,8 @@
 		52FD417927B820E2000EA462 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				52FD41F127B95A10000EA462 /* LoginViewController.swift */,
+				52FD41F227B95A10000EA462 /* LoginViewController.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -254,6 +263,14 @@
 				52FD418427B8264B000EA462 /* Info.plist */,
 			);
 			path = RijksMuseumTests;
+			sourceTree = "<group>";
+		};
+		52FD41E027B95653000EA462 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				52FD41E127B95663000EA462 /* MenuController.swift */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		8108F67D1C332857C7A3FA9B /* Frameworks */ = {
@@ -357,6 +374,7 @@
 			files = (
 				52FD40BB27B67B55000EA462 /* LaunchScreen.storyboard in Resources */,
 				52FD40B827B67B55000EA462 /* Assets.xcassets in Resources */,
+				52FD41F427B95A10000EA462 /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +434,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52FD41E227B95663000EA462 /* MenuController.swift in Sources */,
 				52FD419527B82931000EA462 /* Attributes.swift in Sources */,
 				52FD416227B7EE71000EA462 /* MosaicCollectionViewLayout.swift in Sources */,
 				52FD413827B7CCE7000EA462 /* AppCoordinator.swift in Sources */,
@@ -439,6 +458,7 @@
 				52FD40AF27B67B54000EA462 /* AppDelegate.swift in Sources */,
 				52FD415727B7D3CE000EA462 /* HomeCoordinator.swift in Sources */,
 				52FD40ED27B683C0000EA462 /* RijksAPI.swift in Sources */,
+				52FD41F327B95A10000EA462 /* LoginViewController.swift in Sources */,
 				52FD40B127B67B54000EA462 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

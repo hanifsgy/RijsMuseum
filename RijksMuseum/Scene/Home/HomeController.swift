@@ -10,7 +10,6 @@ import AsyncDisplayKit
 import RxSwift
 import RxCocoa
 
-
 final class HomeController: ASDKViewController<ASCollectionNode> {
     // Context
     private var context: ASBatchContext?
@@ -64,6 +63,12 @@ final class HomeController: ASDKViewController<ASCollectionNode> {
         viewModel.output.itemSelectedO
             .drive()
             .disposed(by: disposeBag)
+        
+        setupMenu()
+    }
+    
+    private setupMenu() {
+        menuController.
     }
     
     // MARK: - Fetch New Batch
