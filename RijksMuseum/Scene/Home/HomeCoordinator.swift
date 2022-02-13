@@ -29,8 +29,8 @@ final class HomeCoordinator: BaseCoordinator<Void> {
 
 extension HomeCoordinator: HomeNavigator {
     func launchDetail(object: ArtObjects) -> Observable<Void> {
-        print("NAVIGATIONS DETAIL \(object.id) image == \(object.headerImage.url)")
-        return Observable.just(())
+        let homeDetailCoordinator = HomeDetailCoordinator(navigationController: navigationController, item: object)
+        return homeDetailCoordinator.start()
     }
     
     

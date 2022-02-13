@@ -33,6 +33,7 @@
 		52FD418D27B826B4000EA462 /* HomeDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD418C27B826B4000EA462 /* HomeDetailController.swift */; };
 		52FD419127B827F6000EA462 /* HomeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD419027B827F6000EA462 /* HomeDetailViewModel.swift */; };
 		52FD419527B82931000EA462 /* Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD419427B82931000EA462 /* Attributes.swift */; };
+		52FD41CD27B94DA4000EA462 /* HomeDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD41CC27B94DA4000EA462 /* HomeDetailCoordinator.swift */; };
 		BC20C124E1140C41CA86D3B2 /* Pods_RijksMuseum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1592C2E6528EC4E314EFA9C4 /* Pods_RijksMuseum.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		52FD418C27B826B4000EA462 /* HomeDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailController.swift; sourceTree = "<group>"; };
 		52FD419027B827F6000EA462 /* HomeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewModel.swift; sourceTree = "<group>"; };
 		52FD419427B82931000EA462 /* Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attributes.swift; sourceTree = "<group>"; };
+		52FD41CC27B94DA4000EA462 /* HomeDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +242,7 @@
 			children = (
 				52FD418C27B826B4000EA462 /* HomeDetailController.swift */,
 				52FD419027B827F6000EA462 /* HomeDetailViewModel.swift */,
+				52FD41CC27B94DA4000EA462 /* HomeDetailCoordinator.swift */,
 			);
 			path = HomeDetail;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 				52FD419527B82931000EA462 /* Attributes.swift in Sources */,
 				52FD416227B7EE71000EA462 /* MosaicCollectionViewLayout.swift in Sources */,
 				52FD413827B7CCE7000EA462 /* AppCoordinator.swift in Sources */,
+				52FD41CD27B94DA4000EA462 /* HomeDetailCoordinator.swift in Sources */,
 				52FD414427B7CE83000EA462 /* ActivityIndicator.swift in Sources */,
 				52FD40F227B684BC000EA462 /* Collection.swift in Sources */,
 				52FD414727B7CE95000EA462 /* ErrorTracker.swift in Sources */,
