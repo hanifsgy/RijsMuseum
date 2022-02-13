@@ -63,12 +63,7 @@ final class HomeController: ASDKViewController<ASCollectionNode> {
         viewModel.output.itemSelectedO
             .drive()
             .disposed(by: disposeBag)
-        
-        setupMenu()
-    }
-    
-    private setupMenu() {
-        menuController.
+
     }
     
     // MARK: - Fetch New Batch

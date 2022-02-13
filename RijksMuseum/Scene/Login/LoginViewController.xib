@@ -10,6 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="RijksMuseum" customModuleProvider="target">
             <connections>
+                <outlet property="buttonLogin" destination="D9n-YB-4o7" id="tvQ-9s-gfb"/>
+                <outlet property="tfPassword" destination="biX-F1-OK8" id="lbC-ea-pty"/>
+                <outlet property="tfUsername" destination="K5b-s4-WHQ" id="02O-DI-SuN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,21 +21,32 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="p6c-at-McQ">
-                    <rect key="frame" x="16" y="399" width="382" height="98"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="p6c-at-McQ">
+                    <rect key="frame" x="16" y="348" width="382" height="200"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K5b-s4-WHQ">
-                            <rect key="frame" x="0.0" y="0.0" width="382" height="34"/>
+                            <rect key="frame" x="0.0" y="0.0" width="382" height="56"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="56" id="dXR-4W-MBg"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="biX-F1-OK8">
-                            <rect key="frame" x="0.0" y="34" width="382" height="34"/>
+                            <rect key="frame" x="0.0" y="72" width="382" height="56"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="56" id="b8y-F9-kE3"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D9n-YB-4o7">
-                            <rect key="frame" x="0.0" y="68" width="382" height="30"/>
+                            <rect key="frame" x="0.0" y="144" width="382" height="56"/>
+                            <color key="backgroundColor" systemColor="linkColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="56" id="ZLk-PI-bTr"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" title="Button"/>
                         </button>
                     </subviews>
@@ -49,6 +63,9 @@
         </view>
     </objects>
     <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
