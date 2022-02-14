@@ -23,13 +23,14 @@ final class LoginCoordinator: BaseCoordinator<Void> {
     override func start() -> Observable<Void> {
         let loginViewModel = LoginViewModel(navigator: self)
         let loginViewController = LoginViewController(viewModel: loginViewModel)
-        navigationController.setViewControllers([loginViewController], animated: true)
+        navigationController.pushViewController(loginViewController, animated: true)
         return Observable.empty()
     }
 }
 
 extension LoginCoordinator: LoginNavigator {
     func launchHome() -> Observable<Void> {
-        return Observable.just(())
+        let homeCoordinator = HomeCoordinator(navigationController: navigationController)
+        return homeCoordinator.start()
     }
 }

@@ -21,7 +21,7 @@ final class LoginViewModel: ViewModelType {
     }
     
     struct Output {
-        let validO: Driver<Void>
+        let validO: Driver<Bool>
         let buttonO: Driver<Void>
     }
     
@@ -37,21 +37,25 @@ final class LoginViewModel: ViewModelType {
                       passwordI: passwordS.asObserver(),
                       buttonI: buttonS.asObserver())
         
-        
-//        let valid = Observable.combineLatest(usernameS, passwordS)
-//            .flatMapLatest { (username, password) -> Observable<Bool> in
-//                print("Usernamje === \(username) password === \(password)")
-//            }
-//            .filter { _ in $0.count > 3 && $1.count > 3}
-//            .asDriverOnErrorJustComplete()
+        let validityCheck = Observable.combineLatest(usernameS, passwordS)
+            .map({ (username, password) in
+                var state: Bool = false
+                if username.count > 3 && password.count > 3 {
+                    state = true
+                }
+                return state
+            })
+            .startWith(false)
+            .asDriverOnErrorJustComplete()
         
         let done = buttonS
             .flatMapLatest { (_) -> Observable<Void> in
+                UserDefaults.Account.set(true, forKey: .isLoggedIn)
                 return navigator.launchHome()
             }
             .asDriverOnErrorJustComplete()
         
-        output = Output(validO: Observable.just(()).asDriverOnErrorJustComplete(),
+        output = Output(validO: validityCheck,
                         buttonO: done)
     }
 }

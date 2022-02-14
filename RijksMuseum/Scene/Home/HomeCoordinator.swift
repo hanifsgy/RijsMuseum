@@ -22,7 +22,7 @@ final class HomeCoordinator: BaseCoordinator<Void> {
     override func start() -> Observable<Void> {
         let homeViewModel = HomeViewModel(navigator: self)
         let homeController = HomeController(viewModel: homeViewModel)
-        navigationController.pushViewController(homeController, animated: true)
+        navigationController.setViewControllers([homeController], animated: true)
         return Observable.empty()
     }
 }

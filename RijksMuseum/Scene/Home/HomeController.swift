@@ -9,6 +9,7 @@ import Foundation
 import AsyncDisplayKit
 import RxSwift
 import RxCocoa
+import UIKit
 
 final class HomeController: ASDKViewController<ASCollectionNode> {
     // Context
@@ -46,6 +47,7 @@ final class HomeController: ASDKViewController<ASCollectionNode> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.white
         navigationItem.title = "Rijks Collections"
         viewModel.input.refreshI.onNext("")
         viewModel.output.refreshO

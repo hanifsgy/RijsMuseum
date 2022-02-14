@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 class LoginViewController: UIViewController {
 
@@ -15,6 +16,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var buttonLogin: UIButton!
     
     private let viewModel: LoginViewModel!
+    private let disposeBag: DisposeBag = DisposeBag()
     
     init(viewModel: LoginViewModel) {
         self.viewModel = viewModel
@@ -28,5 +30,39 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tfUsername.rx.text
+            .orEmpty
+            .distinctUntilChanged()
+            .throttle(.milliseconds(200), scheduler: MainScheduler.instance)
+            .bind(to: viewModel.input.usernameI)
+            .disposed(by: disposeBag)
+        
+        tfPassword.rx.text
+            .orEmpty
+            .distinctUntilChanged()
+            .throttle(.milliseconds(200), scheduler: MainScheduler.instance)
+            .bind(to: viewModel.input.passwordI)
+            .disposed(by: disposeBag)
+        
+        buttonLogin.rx.controlEvent([.touchUpInside])
+            .debounce(.milliseconds(300), scheduler: MainScheduler.instance)
+            .bind(to: viewModel.input.buttonI)
+            .disposed(by: disposeBag)
+        
+        viewModel.output.validO
+            .do(onNext: { [weak self] value in
+                guard let wSelf = self else { return }
+                wSelf.buttonLogin.isEnabled = value
+            })
+            .drive()
+            .disposed(by: disposeBag)
+                
+        viewModel.output.buttonO
+            .do(onNext: { [weak self] (_) in
+                guard let wSelf = self else { return }
+                wSelf.view.endEditing(true)
+            })
+            .drive()
+            .disposed(by: disposeBag)
     }
 }
