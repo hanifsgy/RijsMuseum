@@ -17,6 +17,7 @@ final class HomeViewModel: ViewModelType {
         let refreshI: AnyObserver<String>
         let insertNewCollectionI: AnyObserver<Void>
         let didSelectItemI: AnyObserver<IndexPath>
+        let drawerSelectedI: AnyObserver<Void>
     }
     
     struct Output {
@@ -24,11 +25,13 @@ final class HomeViewModel: ViewModelType {
         let refreshO: Driver<Void>
         let newItemsO: Driver<Void>
         let itemSelectedO: Driver<Void>
+        let drawerO: Driver<Void>
     }
     
     private let refreshSubject = PublishSubject<String>()
     private let insertNewCollectionSubject = PublishSubject<Void>()
     private let itemSelectedSubject = PublishSubject<IndexPath>()
+    private let drawerSelectedSubject = PublishSubject<Void>()
     private let items = BehaviorRelay<[ArtObjects]>(value: [])
     private let activityIndicator = ActivityIndicator()
     private let errorTracker = ErrorTracker()
@@ -40,7 +43,8 @@ final class HomeViewModel: ViewModelType {
         self.navigator = navigator
         input = Input(refreshI: refreshSubject.asObserver(),
                       insertNewCollectionI: insertNewCollectionSubject.asObserver(),
-                      didSelectItemI: itemSelectedSubject.asObserver())
+                      didSelectItemI: itemSelectedSubject.asObserver(),
+                      drawerSelectedI: drawerSelectedSubject.asObserver())
         
         // fetch data
         let canFetchData = insertNewCollectionSubject
@@ -87,11 +91,19 @@ final class HomeViewModel: ViewModelType {
             }
             .mapToVoid()
             .asDriverOnErrorJustComplete()
+        
+        let drawerSelected = drawerSelectedSubject
+            .flatMapLatest { (_) -> Observable<Void> in
+                return navigator.launchDrawer()
+            }
+            .mapToVoid()
+            .asDriverOnErrorJustComplete()
             
         output = Output(itemsO: self.items,
                         refreshO: items,
                         newItemsO: canFetchData,
-                        itemSelectedO: itemSelected)
+                        itemSelectedO: itemSelected,
+                        drawerO: drawerSelected)
     }
 }
 

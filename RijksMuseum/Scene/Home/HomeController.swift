@@ -18,6 +18,7 @@ final class HomeController: ASDKViewController<ASCollectionNode> {
     private var viewModel: HomeViewModel!
     private let disposeBag: DisposeBag = DisposeBag()
     let layoutInspector = MosaicCollectionViewLayoutInspector()
+    var barItem: UIBarButtonItem = UIBarButtonItem()
     
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
@@ -65,7 +66,20 @@ final class HomeController: ASDKViewController<ASCollectionNode> {
         viewModel.output.itemSelectedO
             .drive()
             .disposed(by: disposeBag)
-
+        setupDrawer()
+    }
+    
+    private func setupDrawer() {
+        barItem = UIBarButtonItem(image: UIImage(systemName: "list.dash"))
+        navigationItem.leftBarButtonItem = barItem
+        
+        barItem.rx.tap
+            .bind(to: viewModel.input.drawerSelectedI)
+            .disposed(by: disposeBag)
+        
+        viewModel.output.drawerO
+            .drive()
+            .disposed(by: disposeBag)
     }
     
     // MARK: - Fetch New Batch

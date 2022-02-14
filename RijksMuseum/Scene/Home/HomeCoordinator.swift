@@ -10,6 +10,7 @@ import AsyncDisplayKit
 
 protocol HomeNavigator: AnyObject {
     func launchDetail(object: ArtObjects) -> Observable<Void>
+    func launchDrawer() -> Observable<Void>
 }
 
 final class HomeCoordinator: BaseCoordinator<Void> {
@@ -33,5 +34,8 @@ extension HomeCoordinator: HomeNavigator {
         return homeDetailCoordinator.start()
     }
     
-    
+    func launchDrawer() -> Observable<Void> {
+        let drawerCoordinator = DrawerCoordnator(navigationController: navigationController)
+        return drawerCoordinator.start()
+    }
 }

@@ -52,13 +52,22 @@
                         </button>
                     </subviews>
                 </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RijksMuseum 📷" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jma-31-QLH">
+                    <rect key="frame" x="16" y="60" width="382" height="33.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="28"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="jma-31-QLH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="779-5L-flx"/>
+                <constraint firstItem="jma-31-QLH" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="RDb-0U-5Qj"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="p6c-at-McQ" secondAttribute="trailing" constant="16" id="bGF-72-953"/>
                 <constraint firstItem="p6c-at-McQ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-56" id="icc-ry-8xd"/>
                 <constraint firstItem="p6c-at-McQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="q5g-ER-YmS"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jma-31-QLH" secondAttribute="trailing" constant="16" id="xWN-so-Fd4"/>
             </constraints>
             <point key="canvasLocation" x="139" y="101"/>
         </view>
