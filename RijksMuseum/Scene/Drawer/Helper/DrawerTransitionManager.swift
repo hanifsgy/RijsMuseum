@@ -10,8 +10,12 @@ import UIKit
 class DrawerTransitionManager: NSObject, UIViewControllerTransitioningDelegate {
 
     let slideAnimation = DrawerSlideAnimation()
+    var presentedView: UIViewController = UIViewController()
+    var presenting: UIViewController? = UIViewController()
 
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        self.presentedView = presented
+        self.presenting = presenting
         return DrawerPresentationController(presentedViewController: presented, presenting: presenting)
     }
 
@@ -23,6 +27,11 @@ class DrawerTransitionManager: NSObject, UIViewControllerTransitioningDelegate {
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         slideAnimation.isPresenting = false
         return slideAnimation
+    }
+    
+    func dismiss() {
+        let controller = DrawerPresentationController(presentedViewController: presentedView, presenting: presenting)
+        controller.dismissView()
     }
 }
 
@@ -58,6 +67,10 @@ class DrawerPresentationController: UIPresentationController {
 
     @objc private func dismissPresentedController() {
         presentedViewController.dismiss(animated: true)
+    }
+    
+    public func dismissView() {
+        presentedViewController.dismiss(animated: true, completion: nil)
     }
 
     override func presentationTransitionWillBegin() {
